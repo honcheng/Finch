@@ -391,7 +391,7 @@
 			name = Tests;
 			productName = Tests;
 			productReference = 0D1BA656141A45B6004A5A9F /* Tests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		0D2AA93D14174FA000F4071B /* Finch */ = {
 			isa = PBXNativeTarget;
@@ -682,12 +682,13 @@
 		0D2AA94C14174FA000F4071B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Finch.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Finch/Lib-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -697,12 +698,13 @@
 		0D2AA94D14174FA000F4071B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/Finch.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Finch/Lib-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
