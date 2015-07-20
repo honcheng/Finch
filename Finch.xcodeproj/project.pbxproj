@@ -10,7 +10,6 @@
 		0D1BA64D141A41EB004A5A9F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2AA9AB141752D800F4071B /* OpenAL.framework */; };
 		0D1BA64E141A41EB004A5A9F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2AA9A9141752BE00F4071B /* AudioToolbox.framework */; };
 		0D1BA64F141A41EB004A5A9F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2AA9A7141752A200F4071B /* AVFoundation.framework */; };
-		0D1BA658141A45B6004A5A9F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1BA657141A45B6004A5A9F /* SenTestingKit.framework */; };
 		0D1BA659141A45B6004A5A9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2AA973141750F700F4071B /* UIKit.framework */; };
 		0D1BA65A141A45B6004A5A9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2AA94114174FA000F4071B /* Foundation.framework */; };
 		0D1BA675141A46FE004A5A9F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2AA9AB141752D800F4071B /* OpenAL.framework */; };
@@ -101,8 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D1BA656141A45B6004A5A9F /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D1BA657141A45B6004A5A9F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0D1BA656141A45B6004A5A9F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1BA664141A45B6004A5A9F /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Tests-Prefix.pch"; path = "Finch/Tests-Prefix.pch"; sourceTree = "<group>"; };
 		0D2AA93E14174FA000F4071B /* libFinch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFinch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2AA94114174FA000F4071B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,7 +172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D74728E165AA8230079C0FF /* libFinch.a in Frameworks */,
-				0D1BA658141A45B6004A5A9F /* SenTestingKit.framework in Frameworks */,
 				0D1BA659141A45B6004A5A9F /* UIKit.framework in Frameworks */,
 				0D1BA65A141A45B6004A5A9F /* Foundation.framework in Frameworks */,
 				0D1BA675141A46FE004A5A9F /* OpenAL.framework in Frameworks */,
@@ -239,7 +236,7 @@
 			children = (
 				0D2AA93E14174FA000F4071B /* libFinch.a */,
 				0D2AA971141750F700F4071B /* Finch Demo.app */,
-				0D1BA656141A45B6004A5A9F /* Tests.octest */,
+				0D1BA656141A45B6004A5A9F /* Tests.xctest */,
 				0DAF0EA516947C8D00612EED /* TestRunner.app */,
 			);
 			name = Products;
@@ -253,7 +250,6 @@
 				0D2AA9A7141752A200F4071B /* AVFoundation.framework */,
 				0D2AA94114174FA000F4071B /* Foundation.framework */,
 				0D2AA973141750F700F4071B /* UIKit.framework */,
-				0D1BA657141A45B6004A5A9F /* SenTestingKit.framework */,
 				0DAF0EA916947C8D00612EED /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
@@ -390,8 +386,8 @@
 			);
 			name = Tests;
 			productName = Tests;
-			productReference = 0D1BA656141A45B6004A5A9F /* Tests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = 0D1BA656141A45B6004A5A9F /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		0D2AA93D14174FA000F4071B /* Finch */ = {
 			isa = PBXNativeTarget;
@@ -451,6 +447,7 @@
 		0D2AA93514174FA000F4071B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0640;
 				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = 0D2AA93814174FA000F4071B /* Build configuration list for PBXProject "Finch" */;
@@ -608,15 +605,13 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Finch/Tests-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -627,15 +622,13 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Finch/Tests-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

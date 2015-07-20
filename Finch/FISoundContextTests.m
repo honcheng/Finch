@@ -1,7 +1,7 @@
 #import "FISoundContext.h"
 #import "FISoundDevice.h"
 
-@interface FISoundContextTests : SenTestCase
+@interface FISoundContextTests : XCTestCase
 @end
 
 @implementation FISoundContextTests
@@ -10,7 +10,7 @@
 {
     FISoundDevice *device = [FISoundDevice defaultSoundDevice];
     FISoundContext *context = [[FISoundContext alloc] initWithDevice:device error:NULL];
-    STAssertNotNil(context, @"Create a context");
+    XCTAssertNotNil(context, @"Create a context");
 }
 
 @end

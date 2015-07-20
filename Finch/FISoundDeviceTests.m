@@ -1,13 +1,13 @@
 #import "FISoundDevice.h"
 
-@interface FISoundDeviceTests : SenTestCase
+@interface FISoundDeviceTests : XCTestCase
 @end
 
 @implementation FISoundDeviceTests
 
 - (void) testDefaultDeviceInitialization
 {
-    STAssertNotNil([FISoundDevice defaultSoundDevice], @"Get default sound device");
+    XCTAssertNotNil([FISoundDevice defaultSoundDevice], @"Get default sound device");
 }
 
 @end

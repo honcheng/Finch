@@ -9,17 +9,17 @@
 - (void) testInitializationWithNilPath
 {
     FISound *sound = nil;
-    STAssertNoThrow(
+    XCTAssertNoThrow(
         sound = [[FISound alloc] initWithPath:nil error:NULL],
         @"Do not throw when trying to load a sound from a nil path");
-    STAssertNil(sound, @"Return nil when loading a sound from a nil path");
+    XCTAssertNil(sound, @"Return nil when loading a sound from a nil path");
 }
 
 - (void) testBasicLoading
 {
     NSString *path = [[self soundBundle] pathForResource:@"mono8bit" ofType:@"wav"];
     FISound *sound = [[FISound alloc] initWithPath:path error:NULL];
-    STAssertNotNil(sound, @"Load a basic sound");
+    XCTAssertNotNil(sound, @"Load a basic sound");
 }
 
 @end
